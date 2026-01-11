@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // Extract anything from any file
 // A xyOps Plugin utilizing the amazing Kreuzberg library
 // MIT License
