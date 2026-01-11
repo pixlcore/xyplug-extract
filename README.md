@@ -124,7 +124,7 @@ See [Kreuzberg Format Support](https://docs.kreuzberg.dev/reference/formats/) fo
 
 ## Output Format
 
-Your extracted file data will be into the job output data, which can be used in linked jobs or workflow nodes.  The format looks like this:
+Your extracted file data will be in the job output data, which can then be used in linked jobs or attached workflow nodes.  The output format looks like this:
 
 ```json
 {
