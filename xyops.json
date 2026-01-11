@@ -1,0 +1,47 @@
+{
+	"type": "xypdf",
+	"description": "xyOps Portable Data Object",
+	"version": "1.0",
+	"items": [
+		{
+			"type": "plugin",
+			"data": {
+				"id": "pmka8d4kt8tghf6jk",
+				"title": "Extract Anything",
+				"enabled": true,
+				"type": "event",
+				"command": "npx -y github:pixlcore/xyplug-extract#v1.0.0",
+				"script": "",
+				"kill": "parent",
+				"notes": "Extract structured data from any file, using the amazing Kreuzberg library.",
+				"icon": "excavator",
+				"params": [
+					{
+						"id": "config",
+						"title": "Extraction Configuration",
+						"type": "json",
+						"caption": "Customize the Kreuzberg settings for extractions.  See [Kreuzberg Configuration](https://docs.kreuzberg.dev/reference/configuration/#extractionconfig) for details.",
+						"locked": false,
+						"value": { 
+							"ocr": {
+								"backend": "tesseract",
+								"language": "eng",
+								"tesseractConfig": {
+									"psm": 3
+								}
+							}
+						},
+						"required": true
+					},
+					{
+						"id": "batch",
+						"title": "Batch Mode",
+						"type": "checkbox",
+						"value": false,
+						"caption": "When enabled, extractions are always placed into an `extractions` array, even if only one file is provided."
+					}
+				]
+			}
+		}
+	]
+}

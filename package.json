@@ -1,0 +1,28 @@
+{
+	"name": "xyplug-extract",
+	"type": "module",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Extract structured data out of any file, using the amazing Kreuzberg library.",
+	"author": "Joseph Huckaby <jhuckaby@pixlcore.com>",
+	"homepage": "https://github.com/pixlcore/xyplug-extract",
+	"license": "MIT",
+	"bin": {
+		"xyplug-extract": "index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pixlcore/xyplug-extract"
+	},
+	"bugs": {
+		"url": "https://github.com/pixlcore/xyplug-extract/issues"
+	},
+	"keywords": [
+		"xyops",
+		"kreuzberg",
+		"extract"
+	],
+	"dependencies": {
+		"@kreuzberg/node": "^4.0.0"
+	}
+}
