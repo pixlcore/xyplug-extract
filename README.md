@@ -1,8 +1,6 @@
 <p align="center"><img src="https://raw.githubusercontent.com/pixlcore/xyplug-extract/refs/heads/main/logo.png" height="108" alt="Extract Anything"/></p>
 <h1 align="center">Extract Anything</h1>
 
-## Overview
-
 A versatile data extraction plugin for the [xyOps Workflow Automation System](https://xyops.io).
 
 This Plugin uses the amazing open-source [Kreuzberg](https://kreuzberg.dev/) library to perform structured data extractions on files.  It can pull text and markdown out of PDFs, Word Docs or Powerpoint slides, cell grids out of Excel spreadsheets, OCR text inside images, you name it!
