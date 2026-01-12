@@ -3,7 +3,7 @@
 
 A versatile data extraction plugin for the [xyOps Workflow Automation System](https://xyops.io).
 
-This Plugin uses the amazing open-source [Kreuzberg](https://kreuzberg.dev/) library to perform structured data extractions on files.  It can pull text and markdown out of PDFs, Word Docs or Powerpoint slides, cell grids out of Excel spreadsheets, OCR text inside images, you name it!
+This Plugin uses the amazing open-source [Kreuzberg](https://kreuzberg.dev/) library to perform structured data extractions on files.  It can pull text and markdown out of PDFs, Word Docs or Powerpoint slides, cell grids or CSV out of Excel spreadsheets, perform OCR inside images to extract text, you name it!
 
 To use this Plugin in your workflows, it requires one or more files as inputs.  Once the data is extracted, it is returned as job output data (which is passed to subsequent jobs in linked chains and workflows).
 
@@ -190,6 +190,8 @@ When batch mode is enabled, or when multiple files are provided, each file's ext
 	]
 }		
 ```
+
+If you also check the "Attach Files" checkbox in the plugin parameters, this will attach all text output as files when the job completes.
 
 ## Local Testing
 

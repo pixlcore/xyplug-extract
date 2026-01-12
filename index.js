@@ -4,6 +4,7 @@
 // A xyOps Plugin utilizing the amazing Kreuzberg library
 // MIT License
 
+import { writeFileSync } from 'node:fs';
 import { extractFileSync } from '@kreuzberg/node';
 
 // read job data from stdin
@@ -31,6 +32,7 @@ if (!job.input || !job.input.files || !job.input.files.length) {
 let output = {
 	extractions: []
 };
+let files = [];
 
 // loop over files
 let num_files = job.input.files.length;
@@ -50,7 +52,17 @@ job.input.files.forEach( function(file, idx) {
 	}
 	
 	result.filename = file.filename;
-	if (result.content && (typeof(result.content) == 'string')) result.content = result.content.replace(/\r\n/g, "\n");
+	if (result.content && (typeof(result.content) == 'string')) {
+		// convert dos line endings
+		result.content = result.content.replace(/\r\n/g, "\n");
+		
+		// write output files if desired
+		if (params.files) {
+			let outfile = file.filename.match(/\.\w+$/) ? file.filename.replace(/\.\w+$/, '.txt') : `${file.filename}.txt`;
+			writeFileSync( outfile, result.content + "\n" );
+			files.push(outfile);
+		}
+	}
 	output.extractions.push(result);
 	
 	// update job progress
@@ -67,9 +79,9 @@ if ((output.extractions.length == 1) && !params.batch) {
 // job complete
 if (num_errors == job.input.files.length) {
 	// all files failed
-	console.log( JSON.stringify({ xy: 1, code: 1, description: "All files failed extraction. See job output or data for details.", data: output }) );
+	console.log( JSON.stringify({ xy: 1, code: 1, description: "All files failed extraction. See job output or data for details.", data: output, files }) );
 }
 else {
 	// at least one file succeeded
-	console.log( JSON.stringify({ xy: 1, code: 0, data: output }) );
+	console.log( JSON.stringify({ xy: 1, code: 0, data: output, files }) );
 }
