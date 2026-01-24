@@ -9,8 +9,7 @@ To use this Plugin in your workflows, it requires one or more files as inputs.  
 
 ## Requirements
 
-- npx
-- git
+- docker
 
 Note that the Kreuzberg library is Rust-based, with Node.js bindings.  It ships with [pre-compiled binaries](https://docs.kreuzberg.dev/getting-started/installation/#architecture-support) for many platforms, but yours may require compilation.  To that end, you may need to preinstall a [compiler toolchain](https://docs.kreuzberg.dev/getting-started/installation/#system-dependencies) for this module to work on your servers.
 

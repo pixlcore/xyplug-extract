@@ -10,7 +10,7 @@
 				"title": "Extract Anything",
 				"enabled": true,
 				"type": "event",
-				"command": "npx -y github:pixlcore/xyplug-extract#v1.0.2",
+				"command": "docker run -i --rm --init --name \"xyplug-extract-{{id}}\" ghcr.io/pixlcore/xyplug-extract:v2.0.0",
 				"script": "",
 				"kill": "parent",
 				"notes": "Extract structured data from any file, using the amazing Kreuzberg library.",
