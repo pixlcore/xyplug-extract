@@ -1,7 +1,7 @@
 {
 	"name": "xyplug-extract",
 	"type": "module",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"private": true,
 	"description": "Extract structured data out of any file, using the amazing Kreuzberg library.",
 	"author": "Joseph Huckaby <jhuckaby@pixlcore.com>",
