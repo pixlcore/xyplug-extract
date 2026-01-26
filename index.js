@@ -22,6 +22,9 @@ let config = params.config || {
     }
 };
 
+// set the cwd to the job's temp dir, as xyrun doesn't do it for us
+process.chdir( job.cwd );
+
 // debug info
 if (params.debug) {
 	console.log( "----\nDEBUG INFO:" );
