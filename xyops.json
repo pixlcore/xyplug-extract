@@ -10,7 +10,7 @@
 				"title": "Extract Anything",
 				"enabled": true,
 				"type": "event",
-				"command": "docker run -i --rm --init --name \"xyplug-extract-{{id}}\" ghcr.io/pixlcore/xyplug-extract:v2.0.1",
+				"command": "docker run -i --rm --init --name \"xyplug-extract-{{id}}\" ghcr.io/pixlcore/xyplug-extract:v2.0.2",
 				"script": "",
 				"kill": "parent",
 				"notes": "Extract structured data from any file, using the amazing Kreuzberg library.",
@@ -47,6 +47,13 @@
 						"type": "checkbox",
 						"value": false,
 						"caption": "When enabled, extractions are always placed into an `extractions` array, even if only one file is provided."
+					},
+					{
+						"id": "debug",
+						"title": "Debug Mode",
+						"type": "checkbox",
+						"value": false,
+						"caption": "When enabled, additional debugging information will be printed to STDOUT, for troubleshooting purposes."
 					}
 				]
 			}

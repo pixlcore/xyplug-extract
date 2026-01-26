@@ -4,7 +4,7 @@
 // A xyOps Plugin utilizing the amazing Kreuzberg library
 // MIT License
 
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, globSync } from 'node:fs';
 import { extractFileSync } from '@kreuzberg/node';
 
 // read job data from stdin
@@ -21,6 +21,25 @@ let config = params.config || {
         }
     }
 };
+
+// debug info
+if (params.debug) {
+	console.log( "----\nDEBUG INFO:" );
+	console.log( "Job Params: " + JSON.stringify(job.params) );
+	console.log( "The current working directory is: " + process.cwd() );
+	console.log( "The job working directory is: " + job.cwd );
+	console.log( "The current date/time for our job is: " + (new Date(job.now * 1000)).toString() );
+	
+	// report if we got input
+	if (job.input && job.input.data) {
+		console.log( "Received input data: " + JSON.stringify(job.input.data) );
+	}
+	if (job.input && job.input.files && job.input.files.length) {
+		console.log( "Received input files: " + JSON.stringify(job.input.files) );
+		console.log( "Glob: " + JSON.stringify( globSync('*') ) );
+	}
+	console.log("----");
+}
 
 // make sure we actually have files
 if (!job.input || !job.input.files || !job.input.files.length) {
